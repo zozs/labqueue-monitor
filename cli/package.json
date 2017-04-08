@@ -1,0 +1,20 @@
+{
+  "name": "labqueue-monitor",
+  "version": "1.0.0",
+  "description": "Labqueue monitor in ncurses",
+  "main": "labqueue-monitor.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zozs/labqueue-monitor"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Linus Karlsson <linus.karlsson@eit.lth.se>",
+  "license": "ISC",
+  "dependencies": {
+    "blessed": "^0.1.81",
+    "config": "^1.25.1",
+    "socket.io-client": "^1.7.3"
+  }
+}
