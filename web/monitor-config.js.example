@@ -1,0 +1,8 @@
+var config = {
+  "queues": [
+    {
+      "host": "http://queue-1.example.com",
+      "prettyName": "Room 1"
+    }
+  ]
+};

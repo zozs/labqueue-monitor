@@ -1,0 +1,41 @@
+doctype html
+
+html(ng-app='labqueue-monitor')
+  head
+    meta(charset='utf-8')
+    link(rel='stylesheet', href='bower_components/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', href='monitor.css')
+    title Labqueue monitor
+
+  body(ng-controller='LabqueueMonitorCtrl as vm')
+    nav.navbar.navbar-default
+      .container
+        .navbar-header
+          a.navbar-brand Labqueue monitor
+
+    .container
+      .row
+        .col-md-4(ng-repeat='queue in vm.queues')
+          h3 {{ queue.prettyName }}
+          .alert.alert-danger(ng-show='queue.reconnecting')
+            strong Error!
+            span Connection to queue lost, reconnecting...
+          table.table.table-condensed
+            thead
+              tr
+                th #
+                th Computer
+            tbody
+              tr(ng-repeat='request in queue.queue')
+                td {{ $index }}
+                td {{ request }}
+            tfoot
+              tr(ng-repeat='e in vm.emptyArray(8 - queue.queue.length) track by $index')
+                td &nbsp;
+                td &nbsp;
+  
+  script(src='bower_components/socket.io-client/dist/socket.io.min.js')
+  script(src='bower_components/angular/angular.min.js')
+  script(src='bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js')
+  script(src='monitor-config.js')
+  script(src='monitor.js')

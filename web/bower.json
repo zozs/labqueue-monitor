@@ -1,0 +1,25 @@
+{
+  "name": "labqueue-monitor",
+  "version": "1.0.0",
+  "homepage": "https://github.com/zozs/labqueue",
+  "authors": [
+    "Linus Karlsson <linus.karlsson@eit.lth.se>"
+  ],
+  "description": "Labqueue monitor",
+  "main": "monitor.js",
+  "moduleType": [],
+  "keywords": [
+    "labqueue"
+  ],
+  "license": "ISC",
+  "ignore": [
+    "**/.*",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "~1.4.6",
+    "angular-bootstrap": "~0.13.4",
+    "socket.io-client": "~1.7.2",
+    "bootstrap": "~3.3.5"
+  }
+}
