@@ -18,16 +18,16 @@ html(ng-app='labqueue-monitor')
         .col-md-4(ng-repeat='queue in vm.queues')
           h3 {{ queue.prettyName }}
           .alert.alert-danger(ng-show='queue.reconnecting')
-            strong Error!
+            strong Error!&nbsp;
             span Connection to queue lost, reconnecting...
-          table.table.table-condensed
+          table.table.table-condensed.table-striped
             thead
               tr
                 th #
                 th Computer
             tbody
               tr(ng-repeat='request in queue.queue')
-                td {{ $index }}
+                td {{ $index + 1 }}
                 td {{ request }}
             tfoot
               tr(ng-repeat='e in vm.emptyArray(8 - queue.queue.length) track by $index')
